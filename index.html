@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aplicación estática desplegada con Azure Static Web Apps y GitHub Actions">
+  <title>Cloud Status | Práctica 8</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Cloud Status, inicio">
+        <span class="brand-icon">☁</span>
+        <span>Cloud Status</span>
+      </a>
+      <a class="nav-link" href="#servicios">Servicios</a>
+    </nav>
+
+    <section class="hero-content container" id="inicio">
+      <div>
+        <p class="eyebrow">PRÁCTICA 8 · SERVICIOS CLOUD</p>
+        <h1>Aplicación desplegada con Azure Static Web Apps</h1>
+        <p class="hero-text">
+          Sitio web conectado a GitHub y publicado automáticamente mediante un flujo de integración y despliegue continuo.
+        </p>
+        <a class="button" href="#servicios">Ver estado de servicios</a>
+      </div>
+      <div class="deployment-card" aria-label="Estado del despliegue">
+        <span class="live-dot"></span>
+        <p>Despliegue activo</p>
+        <strong>GitHub Actions + Azure</strong>
+        <small id="current-time">Cargando hora...</small>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="services container" id="servicios">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">MONITOREO</p>
+          <h2>Estado de los servicios</h2>
+        </div>
+        <label class="region-selector">
+          Región
+          <select id="region">
+            <option value="México Central">México Central</option>
+            <option value="Este de EE. UU.">Este de EE. UU.</option>
+            <option value="Europa Occidental">Europa Occidental</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <span class="service-icon">▣</span>
+          <div>
+            <h3>Aplicación web</h3>
+            <p>Contenido estático disponible</p>
+          </div>
+          <span class="status">Operativo</span>
+        </article>
+        <article class="service-card">
+          <span class="service-icon">⌁</span>
+          <div>
+            <h3>Despliegue continuo</h3>
+            <p>Repositorio sincronizado</p>
+          </div>
+          <span class="status">Operativo</span>
+        </article>
+        <article class="service-card">
+          <span class="service-icon">◇</span>
+          <div>
+            <h3>Certificado HTTPS</h3>
+            <p>Conexión segura habilitada</p>
+          </div>
+          <span class="status">Operativo</span>
+        </article>
+      </div>
+
+      <div class="test-panel">
+        <div>
+          <p class="eyebrow">PRUEBA INTERACTIVA</p>
+          <h2>Verifica la aplicación</h2>
+          <p>Presiona el botón para comprobar que JavaScript funciona correctamente en el sitio desplegado.</p>
+        </div>
+        <div class="test-action">
+          <button class="button secondary" id="test-button" type="button">Ejecutar prueba</button>
+          <p id="test-result" aria-live="polite">Esperando prueba...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>Práctica 8 · Azure Static Web Apps</p>
+      <p>Dania Celeste Castro Chavarría</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
